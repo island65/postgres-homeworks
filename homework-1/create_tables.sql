@@ -22,7 +22,7 @@ contact_name varchar (50)
 
 
 --orders
-create table orders_data
+create table orders
 (
 order_id int primary key,
 customer_id varchar(10) REFERENCES customers(customer_id) NOT NULL,
