@@ -28,6 +28,10 @@ full join customers using (customer_id)
 where order_date is NULL
 order by company_name asc
 
+select company_name
+from customers
+where not exists (select customer_id from customers.customer_id = order.customer_id)
+
 -- 4. уникальные названия продуктов, которых заказано ровно 10 единиц (количество заказанных единиц см в колонке quantity табл order_details)
 -- Этот запрос написать именно с использованием подзапроса.
 SELECT DISTINCT product_name
